@@ -8,8 +8,8 @@
 	
 	<div class="item-filter">
 		<input type="text" v-model="search">
-		<button @click="up()">升序</button>
-		<button @click="down()">降序</button>
+		<button @click="sortUp()">升序</button>
+		<button @click="sortDown()">降序</button>
 		<ul>
 			<li v-for="(item,index) in searchData" v-html="item.id +':'+ item.name +':'+ item.num"></li>
 		</ul>
@@ -37,7 +37,7 @@ new Vue({
 		]
 	} ,
 	methods : {
-		up : function(){	
+		sortUp : function(){	
 			
 			//升序
 			var arr = this.list ;
@@ -57,7 +57,7 @@ new Vue({
 			arr.sort( compare('id') )
 
 		} ,
-		down : function(){	
+		sortDown : function(){	
 
 			//降序
 			var arr = this.list ;
